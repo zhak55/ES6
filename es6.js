@@ -4,7 +4,6 @@ class $Event {
    constructor() {
      this.stack = {};
   }
-  
   on( type, fn ) {
    !this.stack[type] && ( this.stack[type] = [] );
     this.stack[type].push(fn);
@@ -17,12 +16,9 @@ class $Event {
    let $ev = this.stack[type];
     if( $ev ) {
      // ES6: is used interators for ... of
-     for( let fn of $ev ) 
-      fn.apply( context,  args ); 
+     for( let fn of $ev ) fn.apply( context,  args ); 
     }
-   return this;
-  }
-     
+   return this; }
 }
  // ES6: inherite some methods 
  // and internal props for Model Class
@@ -43,8 +39,7 @@ class $Event {
    // ES6: template string
    render( template, to ) {
     var tmpl = document.createTextNode( eval(template) );
-     if( to && to.nodeName ) 
-      to.appendChild( tmpl );
+     if( to && to.nodeName ) to.appendChild( tmpl );
     }
   }
 
@@ -70,10 +65,10 @@ class $Event {
   let {three, four} = {three: 3, four:  4};
   // --- 2: Generators
   function* range(start, end, step) {
-	 while (start < end) {
-		 yield start;
-		 start += step;
-	 }
+   while (start < end) {
+    yield start;
+   start += step;
+  }
 }
 
    var value = range(0, 10, 2);
