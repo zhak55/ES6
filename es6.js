@@ -27,7 +27,7 @@ class $Event {
     super.constructor.call(this);
     this.data = fields || [];
   }
- // ES6: sread operator '...param'
+ // ES6: spread operator '...param'
  set( key, value ) {
    this.data[key] = value;
    let $ev = 'change:' + key;
