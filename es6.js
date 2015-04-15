@@ -27,21 +27,21 @@ class $Event {
     super.constructor.call(this);
     this.data = fields || [];
   }
-  // ES6: sread operator '...param'
-  set( key, value ) {
+ // ES6: sread operator '...param'
+ set( key, value ) {
    this.data[key] = value;
    let $ev = 'change:' + key;
     if( this.stack[ $ev ] ) {
       let param = [ $ev, null, value ]
       this.trigger( ...param ); }
-    return this;
-   }
+  return this;
+}
    // ES6: template string
    render( template, to ) {
     var tmpl = document.createTextNode( eval(template) );
      if( to && to.nodeName ) to.appendChild( tmpl );
-    }
-  }
+   }
+}
 
     let Person = new Model({name: 'Roman'})
     // ES6: Arrow functions with param 
