@@ -1,4 +1,4 @@
-// ES6: create $Event class for
+// ES6: create $Event class 
 // Main syntax class { methods in Proto && constructor }
 class $Event {
    constructor() {
