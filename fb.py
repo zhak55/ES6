@@ -3,7 +3,8 @@
 # 
 # python 2.7
 # range
-# xrange
+# xrange - возвращает object-xrange, который является итерируемым объектом, 
+# реализующим стратегию lazy evaluation
 #
 
 ### 2 
