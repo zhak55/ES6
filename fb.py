@@ -11,7 +11,7 @@
 # 
 #   from pympler import asf
 #   obj = xrange(1, 100), range(1, 100)
-#   map(asf.asizeof, obj) # [48 => iterable with LE, 4168 => list]
+#   map(asf.asizeof, obj) # [48, 4168] <=> ['iterable with LE', 'list']
 #
 
 ### 2 
