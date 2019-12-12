@@ -27,3 +27,31 @@ def fibonacci_generator(n):
     for i in range(0, n):
         yield current
         current, previous = current + previous, current
+
+import unittest
+import types
+
+class TestFibonacciGenerator(unittest.TestCase):
+
+    def setUp(self):
+        # alias
+        self.f = fibonacci_generator
+        # real seq: Fn = Fn-1 + Fn-2
+        self.arr = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765]
+
+    def test_err(self):
+        values = self.f(-5)
+        # to get an err before yielding - can be added extra wrap
+        self.assertRaises(ValueError, next, values)
+
+    def test_seq(self):
+        self.assertSequenceEqual(list(self.f(15)), self.arr[:15])
+        # if n = 0: return empty. 0 can be omitted
+        self.assertSequenceEqual(list(self.f(0)), [])
+
+    def test_type(self):
+        # is generator
+        self.assertIsInstance(self.f(5), types.GeneratorType)
+
+if __name__ == '__main__':
+    unittest.main()
